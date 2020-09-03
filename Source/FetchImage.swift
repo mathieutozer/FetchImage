@@ -6,6 +6,7 @@ import SwiftUI
 import Nuke
 
 /// - WARNING: This is an API preview. It is not battle-tested yet and might signficantly change in the future.
+@available(iOS 13.0, *)
 public final class FetchImage: ObservableObject, Identifiable {
     /// The original request.
     public let request: ImageRequest
@@ -166,6 +167,7 @@ public final class FetchImage: ObservableObject, Identifiable {
     }
 }
 
+@available(iOS 13.0, *)
 private extension ImagePipeline.Error {
     var isConstrainedNetwork: Bool {
         if case let .dataLoadingFailed(error) = self,
@@ -176,6 +178,7 @@ private extension ImagePipeline.Error {
     }
 }
 
+@available(iOS 13.0, *)
 public extension FetchImage {
     var view: SwiftUI.Image? {
         #if os(macOS)
